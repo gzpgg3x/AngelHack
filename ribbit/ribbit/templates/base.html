@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script> 
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet/less" href="{{ STATIC_URL }}style.less">
+    {% block js %}
+        <script src="{{ STATIC_URL }}less.js"></script>
+    {% endblock %}
+
+</head>
+<body>
+    <header>
+        <div class="wrapper">
+
+            <span>BookieGoer</span>
+            {% block login %}
+            <a href="/"> || Home ||</a>
+            <a href="/users/"> All Who Check-in Books ||</a>
+            <a href="/users/{{ username }}"> My BookieGoer Check-ins ||</a>
+            <a href="/bookPassers"> Book Check-ins By All ||</a>
+            <form action="/logout">
+                <input type="submit" id="btnLogOut" value="Log Out">
+            </form>
+            {% endblock %}
+        </div>
+    </header>
+    <div id="content">
+        <div class="wrapper">
+            {% block flash %}
+            {% if auth_form.non_field_errors or user_form.non_field_errors or bookPasser_form.errors %}
+            <div class="flash error">
+                {{ auth_form.non_field_errors }}
+                {{ user_form.non_field_errors }}
+                {{ bookPasser_form.content.errors }}
+            </div>
+            {% endif %}
+            {% if notice %}
+            <div class="flash notice">
+                {{ notice }}
+            </div>
+            {% endif %}
+            {% endblock %}
+ 
+            {% block content %}
+ 
+            {% endblock %}
+        </div>
+    </div>
+    <footer>
+        <div class="wrapper">
+            BookieGoer - Discover the Nearest Copy!
+
+        </div>
+    </footer>
+</body>
+</html>

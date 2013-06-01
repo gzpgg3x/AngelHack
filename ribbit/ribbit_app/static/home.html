@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet/less" href="style.less">
+    {% block js %}
+	    <script src="less.js"></script>
+    {% endblock %}
+</head>
+<body>
+	<header>
+		<div class="wrapper">
+
+			<span>bookPasser</span>
+			<form>
+				<input name="email" type="text">
+				<input name="password" type="password">
+			</form>
+		</div>
+	</header>
+	<div id="content">
+		<div class="wrapper">
+
+			<div class="panel right">
+				<h1>New to bookPasser?</h1>
+				<p>
+					<form>
+						<input name="email" type="text">
+						<input name="password" type="text">
+						<input name="password2" type="password">
+						<input type="submit" value="Create Account">
+					</form>
+				</p>
+			</div>
+		</div>
+	</div>
+	<footer>
+		<div class="wrapper">
+
+		</div>
+	</footer>
+</body>
+</html>

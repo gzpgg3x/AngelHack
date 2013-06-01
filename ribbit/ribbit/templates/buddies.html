@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+{% block login %}
+    {% with user.username as username %}
+        {{ block.super }}
+    {% endwith %}
+{% endblock %}
+
+{% block js %}
+<script src="http://maps.google.com/maps/api/js?sensor=false"  
+          type="text/javascript"></script> 
+<script type="text/javascript" src="{{ STATIC_URL }}less.js"></script>
+{% endblock %}
+ 
+{% block content %}
+    <div class="panel right">
+        <h1>Check-in @BookieGoer To Be Booklovers' Nearest Copy</h1>
+        <p>
+            <form action="/submit" method="post">
+            {% for field in bookPasser_form %}{% csrf_token %}
+            {{ field }}
+            {% endfor %}
+            <input type="hidden" value="{{ next_url }}" name="next_url">
+            <input type="submit" value="Submit!">
+            </form>
+        </p>
+    </div>
+    <div class="panel left">
+
+
+
+
+	    <div id="map"><img /></div>        
+	    <div id="shout-form">
+	      <form name="shout" id="shout">
+
+
+	        <p>
+	          <label for="author">Scan Starting Date</label><br />
+	          <input type="text" name="author" id="author" />
+	        </p>
+	        <p>
+	          <label for="message">Scan Ending Date</label><br />
+	          <input type="text" name="message" id="message" />
+	        </p>
+
+	        <p>
+	          <label for="keywords">Book Title</label><br />
+	          <input type="text" name="keywords" id="keywords" />
+	        </p>
+
+	        <p>          
+	        <!--   <textarea name="message" id="message"></textarea>
+	        </p>
+	        <p class="error"></p>
+	        <p> -->
+	          <input type="submit" name="submit" value="SUBMIT!" />
+	        </p>
+	      </form>
+	      <form name="update_radius" id="update_radius">
+	        <input type="text" name="radius" id="radius" value="1" />
+	        <input type="submit" name="submit" value=" RADIUS " />
+          </form>
+	    </div>
+    
+
+
+
+
+
+
+
+    </div>
+
+
+	  
+	
+	  
+
+
+
+	  
+	
+	  
+
+	  
+	  <div style="clear:both;"></div>
+
+
+
+
+
+{% endblock %}
