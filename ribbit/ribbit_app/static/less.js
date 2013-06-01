@@ -201,8 +201,8 @@ function displayMap(address, count, branchname) {
         content += j;
         // alert('content = ' + content);
         seqNum = seq.toString();
-        seqNum = "Copy No. " + seqNum + ": @" + branchname + "  ||  " + "Location: " + address;
-
+        seqNum = '<a href="/bookPassers">' + "Copy No. " + seqNum + ": @" + branchname + "  ||  " + "Location: " + address;
+        // seqNum = "Copy No. " + seqNum + ": @" + branchname + "  ||  " + "Location: " + address;
 
         //alert(seqNum);
         //seqNum = seqNum.concat(company);
