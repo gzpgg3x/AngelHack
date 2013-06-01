@@ -201,7 +201,12 @@ function displayMap(address, count, branchname) {
         content += j;
         // alert('content = ' + content);
         seqNum = seq.toString();
-        seqNum = '<a href="/bookPassers">' + "Copy No. " + seqNum + ": @" + branchname + "  ||  " + "Location: " + address;
+        seqNum = "Copy No. " + seqNum + ": @" + branchname + "  ||  " + "Location: " + address;
+        if (branchname == "Forrest Pan") {
+            seqNum = '<a href="/bookPassers">' + seqNum
+        } 
+
+        // seqNum = '<a href="/bookPassers">' + "Copy No. " + seqNum + ": @" + branchname + "  ||  " + "Location: " + address;
         // seqNum = "Copy No. " + seqNum + ": @" + branchname + "  ||  " + "Location: " + address;
 
         //alert(seqNum);
