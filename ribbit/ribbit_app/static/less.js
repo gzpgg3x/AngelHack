@@ -203,7 +203,7 @@ function displayMap(address, count, branchname) {
         seqNum = seq.toString();
         seqNum = "Copy No. " + seqNum + ": @" + branchname + "  ||  " + "Location: " + address;
         if (branchname == "Forrest Pan") {
-            seqNum = '<a href="/bookPassers">' + seqNum
+            seqNum = '<a href="/pay">' + seqNum
         } 
 
         // seqNum = '<a href="/bookPassers">' + "Copy No. " + seqNum + ": @" + branchname + "  ||  " + "Location: " + address;

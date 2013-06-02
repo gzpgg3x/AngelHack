@@ -1,4 +1,5 @@
 from django.conf.urls import patterns, include, url
+from ribbit_app import views
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
@@ -14,12 +15,14 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     # url(r'^admin/', include(admin.site.urls)),
+    (r'^pay/$', views.pay), # pay     
     url(r'^$', 'ribbit_app.views.index'), # root
     url(r'^login$', 'ribbit_app.views.login_view'), # login
     url(r'^logout$', 'ribbit_app.views.logout_view'), # logout
     url(r'^signup$', 'ribbit_app.views.signup'), # signup
 
     url(r'^bookPassers$', 'ribbit_app.views.public'), # public ribbits
+    #  url(r'^pay$', 'ribbit_app.views.pay'), # pay   
     url(r'^submit$', 'ribbit_app.views.submit'), # submit new ribbit
 
     url(r'^users/$', 'ribbit_app.views.users'),
