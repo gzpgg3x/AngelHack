@@ -34,6 +34,23 @@
 	      <form name="shout" id="shout">
 
 
+
+	        <p>
+				<script src="{{ STATIC_URL }}paypal-button.min.js?merchant=gzpgg3x@yahoo.com" 
+				    data-button="buynow" 
+				    data-name="Books" 
+				    data-quantity="1" 
+				    data-amount="0.01" 
+				    data-currency="USD" 
+				    data-shipping="0" 
+				    data-tax="0" 
+				    data-callback="http://localhost:8000/" 
+				    data-env="sandbox"
+				></script>  
+	        </p>  
+
+
+
 	        <p>
 	          <label for="author">Scan Starting Date</label><br />
 	          <input type="text" name="author" id="author" />
@@ -54,11 +71,25 @@
 	        <p class="error"></p>
 	        <p> -->
 	          <input type="submit" name="submit" value="SUBMIT!" />
+
+
+
+
+
+	          
 	        </p>
 	      </form>
 	      <form name="update_radius" id="update_radius">
 	        <input type="text" name="radius" id="radius" value="1" />
 	        <input type="submit" name="submit" value=" RADIUS " />
+
+
+
+      
+
+
+
+
           </form>
 	    </div>
     
